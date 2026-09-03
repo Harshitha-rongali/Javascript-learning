@@ -1,9 +1,6 @@
-function onDone() {
-    console.log("hi there");
-
-}
-setTimeout(onDone,1000);
-console.log("after setTimeout");
-for(let i=0;i<100000000;i++) {
-    
-}
+const fs=require("fs");
+fs.readFile("a.txt", "utf-8", function(err , data) {
+    console.log(err);
+    console.log(data);
+});
+console.log("done");
