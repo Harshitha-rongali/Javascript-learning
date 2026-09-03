@@ -1,13 +1,9 @@
-function square(n) {
-    return n*n;
+function onDone() {
+    console.log("hi there");
+
 }
-function cube(n) {
-    return n*n*n;
+setTimeout(onDone,1000);
+console.log("after setTimeout");
+for(let i=0;i<100000000;i++) {
+    
 }
-function sumOfSomething(a,b,fn) {
-    let a1 = fn(a);
-    let a2 = fn(b);
-    return a1 + a2;
-}
-let ans = sumOfSomething(1,2,cube);
-console.log(ans);
