@@ -1,6 +1,10 @@
-const fs=require("fs");
-fs.readFile("a.txt", "utf-8", function(err , data) {
-    console.log(err);
-    console.log(data);
+function myOwnSetTimeout(duration) {
+    let p = new Promise(function (resolve) {
+        setTimeout(resolve,1000);
+    });
+    return p;
+}
+myOwnSetTimeout(1000) 
+.then(function() {
+    console.log("log the first thing");
 });
-console.log("done");
