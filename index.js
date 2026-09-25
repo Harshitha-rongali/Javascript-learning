@@ -1,19 +1,14 @@
-const express = require("express")
- 
- const app=express();
- app.use(express.json());
-
- app.post("/health-checkup",(req,res) => {
-  const kidneys = req.body.kidneys;  
-  const kidneyLength=kidneys.length;
-  res.send("you have " + kidneyLength + "kidneys");
- });
-        
-    app.use((err,req,res,next) => {
-    
-    res.json({
-            msg : "Sorry something is wrong"
-        })
-   
+const zod = require("zod");
+function vallidateInput(obj) {
+  const schema = zod.object({
+       email: zod.string().email(),
+       password: zod.string().min(8)
+  })
+  const response = schema.safeParse(obj);
+  console.log(response);
+}
+vallidateInput({
+        email: "harshitharongali148@gmail.com",
+        password:"12345678"
 });
-app.listen(3000);
+
